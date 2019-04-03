@@ -1,5 +1,5 @@
 {
-  "name": "metric-long-short-ratio",
+  "name": "metric-long-short-ratios",
   "version": "1.0.0",
   "description": "Generate Bitfinex Long/Short Ratios via Bitfinex's official API.",
   "main": "index.js",
