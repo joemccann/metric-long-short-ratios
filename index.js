@@ -48,22 +48,34 @@ class BitfinexLongShortRatio {
     // Get Long value
     {
       const direction = 'long'
+
       const URL = this.BASE_URL + this._normalize({ asset, direction })
+
       const response = await fetch(URL, this.REQUEST_OPTIONS)
+
       const { err, data: long } = await this.responseHandler(response)
+
       if (err) return { err }
+
       data.timestamp = long[0]
+
       data.long = long[1]
     }
 
     // Get Short value
     {
       const direction = 'short'
+
       const URL = this.BASE_URL + this._normalize({ asset, direction })
+
       const response = await fetch(URL, this.REQUEST_OPTIONS)
+
       const { err, data: short } = await this.responseHandler(response)
+
       if (err) return { err }
+
       data.timestamp = short[0]
+
       data.short = short[1]
     }
 
