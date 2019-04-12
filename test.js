@@ -50,3 +50,13 @@ test('Long Short Ratio - XRP', async t => {
   t.ok(data)
   t.end()
 })
+
+test('Long Short Ratio - FAIL', async t => {
+  const { err, data } = await lsr.ratio({ asset: 'XR' })
+  if (err) {
+    console.error(err)
+    return t.end()
+  }
+  t.ok(data)
+  t.end()
+})

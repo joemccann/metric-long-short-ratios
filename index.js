@@ -20,6 +20,10 @@ class BitfinexLongShortRatio {
   async responseHandler (response) {
     if (!response.ok) return { err: response.statusText }
     const data = await response.json()
+    //
+    // Bitfinex will return a 200 but 'null' body if the request is wrong
+    //
+    if (!data) return { err: `Request failed: response body was null.` }
     return { data }
   }
 
