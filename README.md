@@ -15,7 +15,7 @@ const LSR = require('metric-long-short-ratio')
 const lsr = new LSR()
 
 ;(async function () {
-  const { err, data } = await lsr.ratio({asset: 'BTC'})
+  const { err, data } = await lsr.ratio({ asset: 'BTC' })
   if (err) return console.error(err)
   console.log(data)
 })()
@@ -28,7 +28,7 @@ const lsr = new LSR()
 
 const asset = 'BTC' || 'ETH' || 'LTC' || 'XRP'
 
-lsr.ratio({ asset })
+const { err, data } = await lsr.ratio({ asset })
 
 /*
 
@@ -42,6 +42,13 @@ lsr.ratio({ asset })
     date: 'Tue Apr 02 2019 21:01:00 GMT-0700 (Pacific Daylight Time)' 
   }
 */
+```
+
+## TESTS
+
+```sh
+npm i -D
+npm test
 ```
 
 ## AUTHORS
